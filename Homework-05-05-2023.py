@@ -1,7 +1,3 @@
-
-# print("Hello world!")
-# print("Hello world!")
-
 n = int(input("Введiть кiлькiсть зiрочок: "))
 n += 1
 i = 1
@@ -18,7 +14,7 @@ print("Hello, " + name)
   ***
    **
     *
-    
+
     *
    **
   ***
