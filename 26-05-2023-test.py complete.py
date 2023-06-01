@@ -1,22 +1,21 @@
-import random
-
-print(random.randint(1, 10))
-
+# import random
+# print(random.randint(1, 10))
+""" Виводить рандомне число від 1 до 10 """
 # name = "Oleksandr"
-# print('Hello ' + name)
-
+# print("Hello " + name)
+""" Потрібна для з'єднання текста зі змінною """
 # print('#####', '#####' + '#####' + '#####', "#####", sep='\n')
+""" sep='\n' потрібна щоб кожний раз виводило на нову строку. Коми для нового рядку. Плюси для з'єднування текстів """
 # print('#\n#####\n' * 5)
-
+""" Можна так записати і помножити щоб повторювалося """
 # text = 'asjkdausfioquwrioquwroiqwrtuioqwr  '
-#
 # print(len(text))
-
+""" Показує кількість символів в тексті (Пробіли також рахуються) """
 # reports = [1, 2, 3, 4, 5, 6]
 # done_reports = [1, 2, 3]
 
 # 01234567891011
-text = 'Hello world!'
+# text = 'Hello world!'
 # card = '1111 1111 1111 1234'
 #
 # print(len(text))
