@@ -2,8 +2,8 @@ import random
 
 print(random.randint(1, 10))
 
-name = "Oleksandr"
-print('Hello ' + name)
+# name = "Oleksandr"
+# print('Hello ' + name)
 
 # print('#####', '#####' + '#####' + '#####', "#####", sep='\n')
 # print('#\n#####\n' * 5)
@@ -15,7 +15,7 @@ print('Hello ' + name)
 # reports = [1, 2, 3, 4, 5, 6]
 # done_reports = [1, 2, 3]
 
-      # 01234567891011
+# 01234567891011
 text = 'Hello world!'
 # card = '1111 1111 1111 1234'
 #
