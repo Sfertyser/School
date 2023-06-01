@@ -43,12 +43,16 @@
 """ Виведе текст до 5 символу """
 # print(text[::-1])
 """ Виведе текст навпаки """
-# text = 'Hello world world'
+text = 'Hello world world'
 # print( len(text) )  # Функція - що це?
-# print( text.find('w', 7, 12) )  # Метод - що це?
-# print( text.rfind('w', 7, 12) )  # Метод
-# print( text[6] )
-# print(text.find('123'))
+"""  Показує кількість символів"""
+# print(text.find('w', 7, 12))  # Метод - що це?
+# print(text.rfind('w', 7, 12))  # Метод
+""" Не зрозумів ,але начебто шукає символ в тексті """
+# print(text[6])
+""" виводить символ на 1 більший за вказаний """
+print(text.find('123'))
+""" знаходить в тексті 123 """
 # print(text.index('123'))
 
 # url = 'https://google.com'
