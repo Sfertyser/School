@@ -2,8 +2,8 @@ import random
 
 print(random.randint(1, 10))
 
-# name = "Oleksandr"
-# print('Hello ' + name)
+name = "Oleksandr"
+print('Hello ' + name)
 
 # print('#####', '#####' + '#####' + '#####', "#####", sep='\n')
 # print('#\n#####\n' * 5)
