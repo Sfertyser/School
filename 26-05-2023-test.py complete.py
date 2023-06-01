@@ -51,29 +51,27 @@ text = 'Hello world world'
 """ Не зрозумів ,але начебто шукає символ в тексті """
 # print(text[6])
 """ виводить символ на 1 більший за вказаний """
-print(text.find('123'))
+# print(text.find('123'))
 """ знаходить в тексті 123 """
 # print(text.index('123'))
-
-# url = 'https://google.com'
 #
+# url = 'https://google.com'
 # find_is_valid_url = url.find('https') != -1 and url.find('.com') != -1
 # is_valid_url = url.startswith('https') and url.endswith('.com')
-#
+""" Перевіряє щоб посилання починалося на https і закінчувалося .com """
 # print(f'Find: {find_is_valid_url}')
 # print(f'swith: {is_valid_url}')
+""" Виводить чи є посиланя і чи працює посилання """
+string = '-12345'
+if string[0] == '-' and string[1:].isdigit():
+    number = int(string)
+    print(number)
 
-
-# string = '-12345'
-#
-# if string[0] == '-' and string[1:].isdigit():
-#     number = int(string)
-#     print(number)
-# elif string.isdigit():
-#     number = int(string)
-#     print(number)
-# else:
-#     print('Error')
+elif string.isdigit():
+    number = int(string)
+    print(number)
+else:
+    print('Error')
 
 # print('Hello world'.isalpha())
 # print('h1'.islower())
