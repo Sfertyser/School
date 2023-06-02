@@ -14,7 +14,7 @@ import random
 # reports = [1, 2, 3, 4, 5, 6]
 # done_reports = [1, 2, 3]
 # 01234567891011
-""" Незнаю """
+""" Пов'язано з len """
 # text = 'Hello world!'
 # card = '1111 1111 1111 1234'
 # print(len(text))
