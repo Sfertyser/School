@@ -1,4 +1,4 @@
-# import random
+import random
 # print(random.randint(1, 10))
 """ Виводить рандомне число від 1 до 10 """
 # name = "Oleksandr"
@@ -70,14 +70,15 @@
 #     print(number)
 # else:
 #     print('Error')
-""" Якщо 1 символ - і 2 символ це число тоді """
-""" Інакше якщо текст це числа """
-""" Інакше виводить помилку """
-print('Hello world'.isalpha())
-print('h1'.islower())
-print('H1'.isupper())
-
-
+""" Якщо 1 символ - і 2 символ це число тоді 
+Інакше якщо текст це числа 
+Інакше виводить помилку """
+# print('Hello world'.isalpha())
+# print('h1'.islower())
+# print('H1'.isupper())
+""" Якщо всі символи це букви тоді True інакше False (Пробіли рахуються) 
+Якщо весь текст з маленьких літер тоді True
+Якщо весь текст з великих літер тоді True """
 """
 replace
 split
@@ -85,35 +86,31 @@ strip
 join
 count
 """
-
-# text = 'Hello world'
-# # print( text.replace('l', '1').replace('o', '0') )
-#
-# # for i in range(0, len(text)):
-# #     print(i,'-',text[i])
-#
-# """
-# 1) Len - 10
-# 2) Upper
-# 3) Lower
-# 4) Number
-# 5) Spec symbols (+, -, =, ., _, ,)
-# """
-#
-# password = '123456789011G'  # 'simplepassword'
-#
+text = 'Hello world'
+# print( text.replace('l', '1').replace('o', '0') )
+""" Замінює значення тексту """
+# for i in range(0, len(text)):
+#     print(i,'-',text[i])
+""" Виводить текст у стовбчик починаючи з 1 символу """
+"""
+1) Len - 10
+2) Upper
+3) Lower
+4) Number
+5) Spec symbols (+, -, =, ., _, ,)
+"""
+# password = '123456789011g''simplepassword'
 # if len(password) < 11:
 #     print('Error!')
 #     exit()
-#
+""" Якщо довжина паролю меньше 11 вивести помилку """
 # has_upper = False
-#
 # for char in password:  #
 #     if char.isupper():
 #         has_upper = True
-#
+""" Якщо в паролі є великі літери тоді True """
 # if not has_upper:
 #     print('Error.')
 #     exit()
-#
+""" Якщо великих літер немає вивести помилку """
 # print('Ok!')
