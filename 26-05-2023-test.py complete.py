@@ -5,7 +5,7 @@
 # print("Hello " + name)
 """ Потрібна для з'єднання текста зі змінною """
 # print('#####', '#####' + '#####' + '#####', "#####", sep='\n')
-""" sep='\n' потрібна щоб кожний раз виводило на нову строку. Коми для нового рядку. Плюси для з'єднування текстів """
+""" sep='n' потрібна щоб кожний раз виводило на нову строку. Коми для нового рядку. Плюси для з'єднування текстів """
 # print('#\n#####\n' * 5)
 """ Можна так записати і помножити щоб повторювалося """
 # text = 'asjkdausfioquwrioquwroiqwrtuioqwr  '
@@ -13,8 +13,8 @@
 """ Показує кількість символів в тексті (Пробіли також рахуються) """
 # reports = [1, 2, 3, 4, 5, 6]
 # done_reports = [1, 2, 3]
-
 # 01234567891011
+""" Незнаю """
 # text = 'Hello world!'
 # card = '1111 1111 1111 1234'
 # print(len(text))
@@ -22,8 +22,7 @@
 # print(text[0])
 """ Показує 1 символ """
 # print(text[14])
-""" Видасть помилку бо 
-недостатньо символів в тексті """
+""" Видасть помилку бо недостатньо символів в тексті """
 # print(text[-2])
 """ Числа з мінусами видають символи з кінця """
 # print(text[len(text) - 4]
@@ -43,12 +42,12 @@
 """ Виведе текст до 5 символу """
 # print(text[::-1])
 """ Виведе текст навпаки """
-text = 'Hello world world'
+# text = 'Hello world world'
 # print( len(text) )  # Функція - що це?
 """  Показує кількість символів"""
 # print(text.find('w', 7, 12))  # Метод - що це?
 # print(text.rfind('w', 7, 12))  # Метод
-""" Не зрозумів ,але начебто шукає символ в тексті """
+""" Не до кінця зрозумів як працює але воно шукає символ в тексті """
 # print(text[6])
 """ виводить символ на 1 більший за вказаний """
 # print(text.find('123'))
@@ -62,20 +61,21 @@ text = 'Hello world world'
 # print(f'Find: {find_is_valid_url}')
 # print(f'swith: {is_valid_url}')
 """ Виводить чи є посиланя і чи працює посилання """
-string = '-12345'
-if string[0] == '-' and string[1:].isdigit():
-    number = int(string)
-    print(number)
-
-elif string.isdigit():
-    number = int(string)
-    print(number)
-else:
-    print('Error')
-
-# print('Hello world'.isalpha())
-# print('h1'.islower())
-# print('H1'.isupper())
+# string = '-12345'
+# if string[0] == '-' and string[1:].isdigit():
+#     number = int(string)
+#     print(number)
+# elif string.isdigit():
+#     number = int(string)
+#     print(number)
+# else:
+#     print('Error')
+""" Якщо 1 символ - і 2 символ це число тоді """
+""" Інакше якщо текст це числа """
+""" Інакше виводить помилку """
+print('Hello world'.isalpha())
+print('h1'.islower())
+print('H1'.isupper())
 
 
 """
