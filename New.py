@@ -24,7 +24,7 @@
 
 name = "Oleksandr"
 number = 13
-if number == 13:
+if False:
     print(name)
 else:
     print(number)
