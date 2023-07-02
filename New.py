@@ -22,9 +22,9 @@
 #     month = int(input("Введіть місяць: "))
 # print("Все вірно")
 
-name = "Oleksandr"
-number = 13
-if False:
-    print(name)
-else:
-    print(number)
+# name = "Oleksandr"
+# number = 13
+# if False:
+#     print(name)
+# else:
+#     print(number)
