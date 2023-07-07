@@ -28,3 +28,33 @@
 #     print(name)
 # else:
 #     print(number)
+
+# word = input("Введіть слово: ")
+# if word == word[::-1]:
+#     print("+")
+# else:
+#     print("-")
+
+# text = input("Введіть текст: ")
+# word = input("Введіть слово: ")
+# if text.count(word) >= 1:
+#     print("YES")
+# else:
+#     print("NO")
+
+# text = input("Введіть рядок: ")
+# if text.startswith("abc"):
+#     print(text.replace("abc", "www"))
+# else:
+#     print(text + "qqq")
+
+# Task 1
+# text = input("Введіть текст: ")
+# text2 = ""
+# for char in text:
+#     if not char.isdigit():
+#         text2 += char
+# print(text2)
+
+
+# Task 2
