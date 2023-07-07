@@ -57,7 +57,6 @@ for char in text:
         text2 += char
 print(text2)
 
-
 # Task 2
 email = input("Введіть електронну пошту: ")
 if "@" in email and "." in email:
