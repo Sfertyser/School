@@ -15,6 +15,13 @@
 
 # Task 2 optimized
 # email = input("Введіть електронну пошту: ")
+# symbol = 0
+# for char in email:
+#     if char == "@":    # Перевіряє чи більше 1 собаки є в змінній.
+#         symbol += 1
+#         if symbol > 1:
+#             print("Помилка, ви ввели більше 1 собаки.")
+#             exit()
 # print("YES") if "@" in email and "." in email else print("NO")
 
 
