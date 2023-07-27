@@ -195,12 +195,26 @@
 # # У дев'ятому рядку виведіть довжину цього рядка.
 # print(f"Довжина рядка: {len(text)}")
 
-# Task 5
-print("Закічнувати речення потрібно з крапкою та пробілом після крапки.")
-text = input("Введіть речення: ")
-if text and text[0].isalpha():
-    text = text[0].upper() + text[1:]
-for i in range(1, len(text)):
-    if text[i - 2] == '.' and text[i].isalpha():
-        text = text[:i] + text[i].upper() + text[i + 1:]
-print(text)
+# Task 5 New
+# print("Закічнувати речення потрібно з крапкою та пробілом після крапки.")
+# text = input("Введіть речення: ")
+# if text[0].isalpha():
+#     text = text[0].upper() + text[1:]
+# for a in range(1, len(text)):
+#     if text[a - 2] == '.' and text[a].isalpha():
+#         text = text[:a] + text[a].upper() + text[a + 1:]
+# count = 0
+# symbols = "~!@#$%^&*()_-+={[}]|\:;\"'<,>.?/ "
+# symbols2 = 0
+# mark = 0
+# for char in text:
+#     if char.isdigit():
+#         count += 1
+#     if char in symbols:
+#         symbols2 += 1
+#     if char == '!':
+#         mark += 1
+# print(f"Перероблений текст:{text}")
+# print(f"Цифри зустрічаються {count} разів в цьому тексті.")
+# print(f"Розділові знаки зустрічаються: {symbols2} разів в цьому тексті.")
+# print(f"Знаки оклику зустрічаються {mark} разів в цьому тексті.")
