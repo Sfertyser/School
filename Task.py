@@ -194,3 +194,13 @@
 #
 # # У дев'ятому рядку виведіть довжину цього рядка.
 # print(f"Довжина рядка: {len(text)}")
+
+# Task 5
+print("Закічнувати речення потрібно з крапкою та пробілом після крапки.")
+text = input("Введіть речення: ")
+if text and text[0].isalpha():
+    text = text[0].upper() + text[1:]
+for i in range(1, len(text)):
+    if text[i - 2] == '.' and text[i].isalpha():
+        text = text[:i] + text[i].upper() + text[i + 1:]
+print(text)
