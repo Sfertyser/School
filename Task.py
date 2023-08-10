@@ -1,6 +1,6 @@
 # Task 1
+import random
 try:
-    import random
     # Блок для створення списку.
     random_number = random.randint(1, 1000)  # Створює рандомне число для random.seed
     random.seed(random_number)  # Генерує список заповненим випадковими числами.
@@ -60,3 +60,68 @@ try:
     print("Сума елементів між першим та останнім позитивними елементами:", sum_between_positives)
 except Exception as error:
     print("Помилка! зв'яжіться з розробником програми.")
+
+
+# Task 2
+# Генеруємо список випадкових цілих чисел
+random_numbers = [random.randint(-100, 100) for _ in range(20)]
+
+# Створюємо списки для зберігання різних типів чисел
+even_numbers = []
+odd_numbers = []
+negative_numbers = []
+positive_numbers = []
+
+# Розділяємо числа відповідно до їхнього типу
+for num in random_numbers:
+    if num % 2 == 0:
+        even_numbers.append(num)
+    else:
+        odd_numbers.append(num)
+    if num < 0:
+        negative_numbers.append(num)
+    elif num > 0:
+        positive_numbers.append(num)
+
+# Виводимо результати
+print("Список випадкових чисел:", random_numbers)
+print("Список парних чисел:", even_numbers)
+print("Список непарних чисел:", odd_numbers)
+print("Список негативних чисел:", negative_numbers)
+print("Список позитивних чисел:", positive_numbers)
+
+# Task Matrix
+# Створюємо матрицю 10x10 та заповнюємо рандомними значеннями від 10 до 99
+matrix = [[random.randint(10, 99) for _ in range(10)] for _ in range(10)]
+
+# Виводимо матрицю
+print("Матриця 10x10:")
+for row in matrix:
+    print(row)
+
+# Знаходимо та виводимо суму чисел головної діагоналі
+main_diagonal_sum = sum(matrix[i][i] for i in range(10))
+print("Сума чисел головної діагоналі:", main_diagonal_sum)
+
+# Знаходимо та виводимо мінімальне та максимальне значення побічної діагоналі
+secondary_diagonal_values = [matrix[i][9 - i] for i in range(10)]
+min_secondary = min(secondary_diagonal_values)
+max_secondary = max(secondary_diagonal_values)
+print("Мінімальне значення побічної діагоналі:", min_secondary)
+print("Максимальне значення побічної діагоналі:", max_secondary)
+
+# Ввід номера стовпця та вивід цифр з цього стовпця
+column_number = int(input("Введіть номер стовпця (0-9): "))
+column_values = [matrix[i][column_number] for i in range(10)]
+print(f"Значення зі стовпця {column_number}: {column_values}")
+
+# Ввід номера двох стовпців та обмін їх місцями
+swap_column1 = int(input("Введіть номер першого стовпця (0-9): "))
+swap_column2 = int(input("Введіть номер другого стовпця (0-9): "))
+for i in range(10):
+    matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
+
+# Виводимо змінену матрицю
+print("Матриця після обміну стовпців:")
+for row in matrix:
+    print(row)
