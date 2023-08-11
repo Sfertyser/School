@@ -136,7 +136,7 @@ try:
         for row in matrix:
             print(row)
 
-    # Ввід номера двох рядків та обмін їх місцями.
+    # Ввід номера двох рядків та обмін їх місцями.  # Не працює
     swap_row1 = int(input("Введіть номер рядка який ви хочете замінити (0-9): "))
     swap_row2 = int(input("Введіть номер рядка яким ви заміните його (0-9): "))
     if swap_column1 == swap_column2 or swap_column2 == swap_column1:
