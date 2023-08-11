@@ -96,37 +96,59 @@ import random
 
 
 # # Task Matrix
-# # Створюємо матрицю 10x10 та заповнюємо рандомними значеннями від 10 до 99
-# matrix = [[random.randint(10, 99) for _ in range(10)] for _ in range(10)]
-#
-# # Виводимо матрицю
-# print("Матриця 10x10:")
-# for row in matrix:
-#     print(row)
-#
-# # Знаходимо та виводимо суму чисел головної діагоналі
-# main_diagonal_sum = sum(matrix[i][i] for i in range(10))
-# print("Сума чисел головної діагоналі:", main_diagonal_sum)
-#
-# # Знаходимо та виводимо мінімальне та максимальне значення побічної діагоналі
-# secondary_diagonal_values = [matrix[i][9 - i] for i in range(10)]
-# min_secondary = min(secondary_diagonal_values)
-# max_secondary = max(secondary_diagonal_values)
-# print("Мінімальне значення побічної діагоналі:", min_secondary)
-# print("Максимальне значення побічної діагоналі:", max_secondary)
-#
-# # Ввід номера стовпця та вивід цифр з цього стовпця
-# column_number = int(input("Введіть номер стовпця (0-9): "))
-# column_values = [matrix[i][column_number] for i in range(10)]
-# print(f"Значення зі стовпця {column_number}: {column_values}")
-#
-# # Ввід номера двох стовпців та обмін їх місцями
-# swap_column1 = int(input("Введіть номер першого стовпця (0-9): "))
-# swap_column2 = int(input("Введіть номер другого стовпця (0-9): "))
-# for i in range(10):
-#     matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
-#
-# # Виводимо змінену матрицю
-# print("Матриця після обміну стовпців:")
-# for row in matrix:
-#     print(row)
+try:
+    # Блок для створення матриці 10x10 та заповнення рандомними числами.
+    matrix = [[random.randint(10, 99) for _ in range(10)] for _ in range(10)]  # Створює матрицю.
+    print("Матриця:")  # Виводимо матрицю
+    for row in matrix:  # Звертаємося до кожного рядка в матриці.
+        print(row)  # Виводимо на екран матрицю.
+
+    # Блок для виведення суми чисел головної діагоналі.
+    main_diagonal_sum = sum(matrix[i][i] for i in range(10))  # Цей рядок проходить по всім індексам i від 0 до 9.
+    print(f"Сума чисел головної діагоналі: {main_diagonal_sum}")  # Виводимо суму головної діагоналі.
+
+    # Знаходимо та виводимо мінімальне та максимальне значення побічної діагоналі
+    secondary_diagonal_numbers = [matrix[i][9 - i] for i in range(10)]  # Проходить по побічній діагоналі матриці.
+    min_secondary = min(secondary_diagonal_numbers)  # Вибирає мінімальне значення з матриці.
+    max_secondary = max(secondary_diagonal_numbers)  # Вибирає максимальне значення з матриці.
+    print("Мінімальне значення побічної діагоналі:", min_secondary)  # Виводить мінімальне значення.
+    print("Максимальне значення побічної діагоналі:", max_secondary)  # Виводить максимальне значення.
+
+    # Ввід номера стовпця та вивід цифр з цього стовпця.
+    column_number = int(input("Введіть номер стовпця (0-9): "))  # Просить ввести в користувача номер стовпця.
+    column_values = [matrix[i][column_number] for i in range(10)]  # Вибирає стовбець з матриці.
+    print(f"Значення зі стовпця {column_number}: {column_values}")  # Виводить цифру користувача і стовпець.
+
+    # Ввід номера рядка та вивід цифр з цього рядка.
+    row_number = int(input("Введіть номер рядка (0-9): "))  # Просить ввести в користувача номер рядка.
+    row_values = matrix[row_number]  # Вибирає рядок з матриці.
+    print(f"Значення з рядка {row_number}: {row_values}")  # Виводить цифру користувача і рядок.
+
+    # Ввід номера двох стовпців та обмін їх місцями.
+    swap_column1 = int(input("Введіть номер стовпця який ви хочете замінити (0-9): "))
+    swap_column2 = int(input("Введіть номер стовпця яким ви заміните його (0-9): "))
+    if swap_column1 == swap_column2 or swap_column2 == swap_column1:
+        print("Помилка, ви ввели однакові стовпці")
+    else:
+        for i in range(10):
+            matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
+        print("Матриця після обміну стовпців:")  # Виводимо змінену матрицю.
+        for row in matrix:
+            print(row)
+
+    # Ввід номера двох рядків та обмін їх місцями.
+    swap_row1 = int(input("Введіть номер рядка який ви хочете замінити (0-9): "))
+    swap_row2 = int(input("Введіть номер рядка яким ви заміните його (0-9): "))
+    if swap_column1 == swap_column2 or swap_column2 == swap_column1:
+        print("Помилка, ви ввели однакові рядки")
+    else:
+        for i in range(10):
+            matrix[i][swap_row1], matrix[i][swap_row2] = matrix[i][swap_row2], matrix[i][swap_row1]
+        print("Матриця після обміну рядків:")  # Виводимо змінену матрицю
+        for row in matrix:
+            print(row)
+
+except ValueError as error:  # Якщо з'являється якась помилка.
+    print("Помилка, ви ввели текст або символи.")  # Виводимо користувачу про помилку.
+except Exception as Error:  # Якщо з'являється якась помилка.
+    print(f"Помилка! зв'яжіться з розробником програми.")  # Виводимо користувачу про помилку.
