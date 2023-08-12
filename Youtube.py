@@ -41,3 +41,23 @@
 # slice = slice(7, -4)
 # print(website1[slice])
 # print(website2[slice])
+import random
+# Блок для створення матриці 10x10 та заповнення рандомними числами.
+matrix = [[random.randint(10, 99) for _ in range(10)] for _ in range(10)]  # Створює матрицю.
+print("Матриця:")  # Виводимо матрицю
+for row in matrix:  # Звертаємося до кожного рядка в матриці.
+    print(row)  # Виводимо на екран матрицю.
+
+swap_column1 = int(input("Введіть номер стовпця який ви хочете замінити (0-9): "))
+swap_column2 = int(input("Введіть номер стовпця яким ви заміните його (0-9): "))
+if swap_column1 == swap_column2 or swap_column2 == swap_column1:
+    print("Помилка, ви ввели однакові рядки")
+else:
+    if 0 <= swap_column1 < 10 and 0 <= swap_column2 < 10:
+        for i in range(10):
+            matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
+        print("Матриця після обміну рядків:")  # Виводимо змінену матрицю.
+        for row in matrix:
+            print(row)
+    else:
+        print("Помилка, ви ввели число не в діапазоні матриці.")
