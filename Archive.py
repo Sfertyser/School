@@ -117,20 +117,20 @@ text = 'Hello world'
 
 
 # Це перший прямокутний трикутник.
-n = int(input("Введiть кiлькiсть зiрочок: "))
-m = 0
-while n > 0:
-    print(" " * m + "*" * n)
-    n -= 1
-    m += 1
-
-# Це другий прямокутний трикутник.
-n = int(input("Введiть кiлькiсть зiрочок: "))
-m = 1
-while n > 0:
-    print(" " * (n - 1) + "*" * m)
-    n -= 1
-    m += 1
+# n = int(input("Введiть кiлькiсть зiрочок: "))
+# m = 0
+# while n > 0:
+#     print(" " * m + "*" * n)
+#     n -= 1
+#     m += 1
+#
+# # Це другий прямокутний трикутник.
+# n = int(input("Введiть кiлькiсть зiрочок: "))
+# m = 1
+# while n > 0:
+#     print(" " * (n - 1) + "*" * m)
+#     n -= 1
+#     m += 1
 
 """ 
 *****
@@ -147,36 +147,36 @@ while n > 0:
 """
 
 
-print("Введіть число:")
-number = int(input())
-print("Введіть місяць:")
-month = (input())
-print("Введіть рік:")
-year = int(input())
-if 21 <= number <= 31 and month == 'березень' or 1 <= number <= 20 and month == 'квітень':
-    print("По гороскопу ви Овен.")
-elif 21 <= number <= 30 and month == 'квітень' or 1 <= number <= 20 and month == 'травень':
-    print("По гороскопу ви Телець.")
-elif 21 <= number <= 31 and month == 'травень' or 1 <= number <= 20 and month == 'червень':
-    print("По гороскопу ви Близнюки.")
-elif 22 <= number <= 30 and month == 'червень' or 1 <= number <= 22 and month == 'липень':
-    print("По гороскопу ви Рак.")
-elif 23 <= number <= 31 and month == 'липень' or 1 <= number <= 23 and month == 'серпень':
-    print("По гороскопу ви Лев.")
-elif 24 <= number <= 31 and month == 'серпень' or 1 <= number <= 23 and month == 'вересень':
-    print("По гороскопу ви Діви.")
-elif 24 <= number <= 30 and month == 'вересень' or 1 <= number <= 23 and month == 'жовтень':
-    print("По гороскопу ви Терези.")
-elif 24 <= number <= 31 and month == 'жовтень' or 1 <= number <= 22 and month == 'листопад':
-    print("По гороскопу ви Скорпіон.")
-elif 23 <= number <= 30 and month == 'листопад' or 1 <= number <= 21 and month == 'грудень':
-    print("По гороскопу ви Стрілець.")
-elif 22 <= number <= 31 and month == 'грудень' or 1 <= number <= 20 and month == 'січень':
-    print("По гороскопу ви Козеріг.")
-elif 21 <= number <= 31 and month == 'січень' or 1 <= number <= 18 and month == 'лютий':
-    print("По гороскопу ви Водолій.")
-elif 19 <= number <= 28 and month == 'лютий' or 1 <= number <= 20 and month == 'березень':
-    print("По гороскопу ви Риби.")
+# print("Введіть число:")
+# number = int(input())
+# print("Введіть місяць:")
+# month = (input())
+# print("Введіть рік:")
+# year = int(input())
+# if 21 <= number <= 31 and month == 'березень' or 1 <= number <= 20 and month == 'квітень':
+#     print("По гороскопу ви Овен.")
+# elif 21 <= number <= 30 and month == 'квітень' or 1 <= number <= 20 and month == 'травень':
+#     print("По гороскопу ви Телець.")
+# elif 21 <= number <= 31 and month == 'травень' or 1 <= number <= 20 and month == 'червень':
+#     print("По гороскопу ви Близнюки.")
+# elif 22 <= number <= 30 and month == 'червень' or 1 <= number <= 22 and month == 'липень':
+#     print("По гороскопу ви Рак.")
+# elif 23 <= number <= 31 and month == 'липень' or 1 <= number <= 23 and month == 'серпень':
+#     print("По гороскопу ви Лев.")
+# elif 24 <= number <= 31 and month == 'серпень' or 1 <= number <= 23 and month == 'вересень':
+#     print("По гороскопу ви Діви.")
+# elif 24 <= number <= 30 and month == 'вересень' or 1 <= number <= 23 and month == 'жовтень':
+#     print("По гороскопу ви Терези.")
+# elif 24 <= number <= 31 and month == 'жовтень' or 1 <= number <= 22 and month == 'листопад':
+#     print("По гороскопу ви Скорпіон.")
+# elif 23 <= number <= 30 and month == 'листопад' or 1 <= number <= 21 and month == 'грудень':
+#     print("По гороскопу ви Стрілець.")
+# elif 22 <= number <= 31 and month == 'грудень' or 1 <= number <= 20 and month == 'січень':
+#     print("По гороскопу ви Козеріг.")
+# elif 21 <= number <= 31 and month == 'січень' or 1 <= number <= 18 and month == 'лютий':
+#     print("По гороскопу ви Водолій.")
+# elif 19 <= number <= 28 and month == 'лютий' or 1 <= number <= 20 and month == 'березень':
+#     print("По гороскопу ви Риби.")
 
 
 print(random.randint(1, 10))
@@ -314,58 +314,58 @@ count
 
 
 # Task 1
-text = input("Введіть текст: ")
-text2 = ""
-for char in text:
-    if not char.isdigit():
-        text2 += char
-print(text2)
-
-# Task 2
-email = input("Введіть електронну пошту: ")
-if "@" in email and "." in email:
-    print("YES")
-else:
-    print("NO")
-
-# Task 2 optimized
-email = input("Введіть електронну пошту: ")
-print("YES") if "@" in email and "." in email else print("NO")
-
-
-password = input('Введіть ваш пароль: ')
-(t, y, u, i, o, p) = (0, 0, 0, 0, 0, 0)
-s = "`~!@#$%^&*()_-+={}[]\|:;\"'<>,.?/"
-for char in password:
-    if len(password) >= 8:
-        t = 1
-    if char.isdigit:
-        y = 1
-    if char.isupper:
-        u = 1
-    if char.islower:
-        i = 1
-    if any(char in s for char in password):
-        o = 1
-p = t + y + u + i + o
-print(f"Ваша кількість балів: {p}")
-if t == 0:
-    print("""Ваш пароль складається з менше 8 символів."
-    Краще використовувати довші паролі для більшого захисту.""")
-if y == 0:
-    print("""У Вашому паролі немає чисел.
-    Використання чисел в паролі значно підвищує його складність.""")
-if u == 0:
-    print("""У Вашому паролі немає великих літер.
-    Використання великих літер в паролі значно підвищує його складність.""")
-if i == 0:
-    print("""У Вашому паролі немає маленьких літер.
-    Використання маленьких літер в паролі значно підвищує його складність.""")
-if o == 0:
-    print("""У Вашому паролі немає ніяких знаків.
-    Використання знаків в паролі значно підвищує його складність.""")
-if p == 5:
-    print("Ваш пароль пройшов всі перевірки, ви молодець.")
+# text = input("Введіть текст: ")
+# text2 = ""
+# for char in text:
+#     if not char.isdigit():
+#         text2 += char
+# print(text2)
+#
+# # Task 2
+# email = input("Введіть електронну пошту: ")
+# if "@" in email and "." in email:
+#     print("YES")
+# else:
+#     print("NO")
+#
+# # Task 2 optimized
+# email = input("Введіть електронну пошту: ")
+# print("YES") if "@" in email and "." in email else print("NO")
+#
+#
+# password = input('Введіть ваш пароль: ')
+# (t, y, u, i, o, p) = (0, 0, 0, 0, 0, 0)
+# s = "`~!@#$%^&*()_-+={}[]\|:;\"'<>,.?/"
+# for char in password:
+#     if len(password) >= 8:
+#         t = 1
+#     if char.isdigit:
+#         y = 1
+#     if char.isupper:
+#         u = 1
+#     if char.islower:
+#         i = 1
+#     if any(char in s for char in password):
+#         o = 1
+# p = t + y + u + i + o
+# print(f"Ваша кількість балів: {p}")
+# if t == 0:
+#     print("""Ваш пароль складається з менше 8 символів."
+#     Краще використовувати довші паролі для більшого захисту.""")
+# if y == 0:
+#     print("""У Вашому паролі немає чисел.
+#     Використання чисел в паролі значно підвищує його складність.""")
+# if u == 0:
+#     print("""У Вашому паролі немає великих літер.
+#     Використання великих літер в паролі значно підвищує його складність.""")
+# if i == 0:
+#     print("""У Вашому паролі немає маленьких літер.
+#     Використання маленьких літер в паролі значно підвищує його складність.""")
+# if o == 0:
+#     print("""У Вашому паролі немає ніяких знаків.
+#     Використання знаків в паролі значно підвищує його складність.""")
+# if p == 5:
+#     print("Ваш пароль пройшов всі перевірки, ви молодець.")
 
 
 # Task 1
@@ -588,3 +588,200 @@ if p == 5:
 # print(f"Цифри зустрічаються {count} разів в {text}.")
 # print(f"Розділові знаки зустрічаються: {symbols2} разів в {text}.")
 # print(f"Знаки оклику зустрічаються {mark} разів в {text}.")
+
+# Task 1
+# try:
+#     # Блок для створення списку.
+#     random_number = random.randint(1, 1000)  # Створює рандомне число для random.seed
+#     random.seed(random_number)  # Генерує список заповненим випадковими числами.
+#     n = 10  # Кількість чисел у списку.
+#     numbers = [random.randint(-1000, 1000) for _ in range(n)]  # Вибирає рандомне число для всіх елементів.
+#     print(f"Список чисел: {numbers}")  # Виводить створенні числа.
+#
+#     # Блок для обчислення суми негативних чисел.
+#     negative_sum = 0  # Створюємо змінну для суми негативних чисел.
+#     for x in numbers:  # Звертається до кожного елементу в листі.
+#         if x < 0:  # Якщо елемент списку менший за нуль.
+#             negative_sum += x  # Добавляє число до змінної.
+#     print(f"Сума негативних чисел: {negative_sum}")  # Виводимо суму негативних чисел.
+#
+#     # Блок для обчислення суми парних та непарних чисел.
+#     even_sum = 0  # Створюємо змінну для суми парних чисел.
+#     odd_sum = 0  # Створюємо змінну для суми непарних чисел.
+#     for x in numbers:  # Звертається до кожного елементу в листі.
+#         if x % 2 == 0:  # Якщо число зі списку ділиться на 2 без залишку.
+#             even_sum += x  # Добавляємо число до суми парних чисел.
+#         else:  # Інакше
+#             odd_sum += x  # Добавляємо число до суми непарних чисел.
+#     print(f"Сума парних чисел: {even_sum}")  # Виводимо суму парних чисел.
+#     print(f"Сума непарних чисел: {odd_sum}")  # Виводимо суму непарних чисел.
+#
+#     # Блок для обчислення добутка елементів з кратними індексами 3.
+#     index3_number = 1  # Змінна для добутка елементів з кратними індексами 3.
+#     for i in range(2, len(numbers), 3):  # Вибирає елементи зі списку індекс який кратний 3.
+#         index3_number *= numbers[i]  # Перемножує число зі змінною.
+#     print(f"Добуток елементів з кратними індексами 3: {index3_number}")  # Виводить добуток елементів.
+#
+#     # Блок для обчислення добутка елементів між мінімальним та максимальним елементом.
+#     min_num = min(numbers)  # Вибирає мінимальне число зі списку.
+#     max_num = max(numbers)  # Вибирає максимальне число зі списку.
+#     min_max_number = 1  # Змінна для добутка елементів.
+#     for x in numbers[numbers.index(min_num) + 1: numbers.index(max_num)]:  # Шукає чи є елементи між ними.
+#         min_max_number *= x  # Якщо є то перемножує зі змінною.
+#     if min_max_number == 1:  # Якщо між елементами немає інших елементів.
+#         print(f"Між мінімальним та максимальним елементом немає інших елементів.")  # Виводить це.
+#     else:  # Інакше
+#         print(f"Добуток елементів між мінімальним та максимальним елементом:: {min_max_number}")  # Виводить це.
+#
+#     # Блок для обчислення суми елементів між першим та останнім позитивними елементами
+#     first_positive_number = 0  # Змінна для першого позитивного числа.
+#     last_positive_number = 0  # Змінна для останнього позитивного числа.
+#     sum_between_numbers = 0  # Змінна для суми елементів.
+#     for i, x in enumerate(numbers):  # Звертаємося до елементів зі списку.
+#         if x > 0:  # Якщо число більше за нуль.
+#             first_positive_number = i  # Заноситься до змінної.
+#             break  # Виходимо з циклу.
+#     for i in range(len(numbers) - 1, -1, -1):  # Шукаємо елементи, починаючи з останнього.
+#         if numbers[i] > 0:  # Якщо число більше за нуль.
+#             last_positive_number = i  # Заноситься до змінної.
+#             break  # Виходимо з циклу.
+#     if first_positive_number == 0 or last_positive_number == 0:  # Якщо змінні дорівнюють нулю.
+#         print(f"В Списку недостатньо позитивних елементів.")  # Виводимо помилку.
+#     else:
+#         for x in numbers[first_positive_number + 1: last_positive_number]:  # Шукаємо числа між ними.
+#             sum_between_numbers += x  # Додаємо їх до змінної.
+#         print(f"Сума елементів між першим та останнім позитивними елементами: {sum_between_numbers}")  # Виводить суму
+#
+# except Exception as error:  # Якщо з'являється якась помилка.
+#     print("Помилка! зв'яжіться з розробником програми.")  # Виводимо користувачу про помилку.
+
+
+# Task 2
+# try:
+#     # Блок для створення списку.
+#     random_number = random.randint(1, 1000)  # Створює рандомне число для random.seed
+#     random.seed(random_number)  # Генерує список заповненим випадковими числами.
+#     n = 10  # Кількість чисел у списку.
+#     numbers = [random.randint(-1000, 1000) for _ in range(n)]  # Вибирає рандомне число для всіх елементів.
+#     print(f"Список чисел: {numbers}")  # Виводить створенні числа
+#
+#     # Блок для створення нового списка з цілими парними числами.
+#     even_numbers = [x for x in numbers if x % 2 == 0]  # Звертаємося до кожного числа з першого списку.
+#     print(f"Список парних чисел: {even_numbers}")  # Виводимо новий список.
+#
+#     # Блок для створення нового списка з цілими непарними числами.
+#     odd_numbers = [x for x in numbers if x % 2 != 0]  # Звертаємося до кожного числа з першого списку.
+#     print(f"Список непарних чисел: {odd_numbers}")  # Виводимо новий список.
+#
+#     # Блок для створення нового списка з цілими негативними числами.
+#     negative_numbers = [x for x in numbers if x < 0]  # Звертаємося до кожного числа з першого списку.
+#     print(f"Список негативних чисел: {negative_numbers}")  # Виводимо новий список.
+#
+#     # Блок для створення нового списка з цілими позитивними числами.
+#     positive_numbers = [x for x in numbers if x > 0]  # Звертаємося до кожного числа з першого списку.
+#     print(f"Список позитивних чисел: {positive_numbers}")  # Виводимо новий список.
+#
+# except Exception as error:  # Якщо з'являється якась помилка.
+#     print("Помилка! зв'яжіться з розробником програми.")  # Виводимо користувачу про помилку.
+
+
+# # Task Matrix
+# try:
+#     # Блок для створення матриці 10x10 та заповнення рандомними числами.
+#     matrix = [[random.randint(10, 99) for _ in range(10)] for _ in range(10)]  # Створює матрицю.
+#     print("Матриця:")  # Виводимо матрицю
+#     for row in matrix:  # Звертаємося до кожного рядка в матриці.
+#         print(row)  # Виводимо на екран матрицю.
+#
+#     # Блок для виведення суми чисел головної діагоналі.
+#     main_diagonal_sum = sum(matrix[i][i] for i in range(10))  # Цей рядок проходить по всім індексам i від 0 до 9.
+#     print(f"Сума чисел головної діагоналі: {main_diagonal_sum}")  # Виводимо суму головної діагоналі.
+#
+#     # Знаходимо та виводимо мінімальне та максимальне значення побічної діагоналі
+#     secondary_diagonal_numbers = [matrix[i][9 - i] for i in range(10)]  # Проходить по побічній діагоналі матриці.
+#     min_secondary = min(secondary_diagonal_numbers)  # Вибирає мінімальне значення з матриці.
+#     max_secondary = max(secondary_diagonal_numbers)  # Вибирає максимальне значення з матриці.
+#     print("Мінімальне значення побічної діагоналі:", min_secondary)  # Виводить мінімальне значення.
+#     print("Максимальне значення побічної діагоналі:", max_secondary)  # Виводить максимальне значення.
+#
+#     # Ввід номера стовпця та вивід цифр з цього стовпця.
+#     column_number = int(input("Введіть номер стовпця (0-9): "))  # Просить ввести в користувача номер стовпця.
+#     column_values = [matrix[i][column_number] for i in range(10)]  # Вибирає стовбець з матриці.
+#     print(f"Значення зі стовпця {column_number}: {column_values}")  # Виводить цифру користувача і стовпець.
+#
+#     # Ввід номера рядка та вивід цифр з цього рядка.
+#     row_number = int(input("Введіть номер рядка (0-9): "))  # Просить ввести в користувача номер рядка.
+#     row_values = matrix[row_number]  # Вибирає рядок з матриці.
+#     print(f"Значення з рядка {row_number}: {row_values}")  # Виводить цифру користувача і рядок.
+#
+#     # Ввід номера двох стовпців та обмін їх місцями.
+#     swap_column1 = int(input("Введіть номер стовпця який ви хочете замінити (0-9): "))
+#     swap_column2 = int(input("Введіть номер стовпця яким ви заміните його (0-9): "))
+#     if swap_column1 == swap_column2 or swap_column2 == swap_column1:
+#         print("Помилка, ви ввели однакові стовпці")
+#     else:
+#         if 0 <= swap_column1 < 10 and 0 <= swap_column2 < 10:
+#             for i in range(10):
+#                 matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
+#             print("Матриця після обміну стовпців:")  # Виводимо змінену матрицю.
+#             for row in matrix:
+#                 print(row)
+#         else:
+#             print("Помилка, ви ввели число не в діапазоні матриці.")
+#
+#     # Ввід номера двох рядків та обмін їх місцями.
+#     swap_row1 = int(input("Введіть номер рядка який ви хочете замінити (0-9): "))
+#     swap_row2 = int(input("Введіть номер рядка яким ви заміните його (0-9): "))
+#     if swap_row1 == swap_row2:
+#         print("Помилка, ви ввели однакові рядки")
+#     else:
+#         if 0 <= swap_column1 < 10 and 0 <= swap_column2 < 10:
+#             for i in range(10):
+#                 matrix[i][swap_column1], matrix[i][swap_column2] = matrix[i][swap_column2], matrix[i][swap_column1]
+#             print("Матриця після обміну рядків:")  # Виводимо змінену матрицю.
+#             for row in matrix:
+#                 print(row)
+#         else:
+#             print("Помилка, ви ввели число не в діапазоні матриці.")
+#
+# except ValueError as error:  # Якщо з'являється якась помилка.
+#     print("Помилка, ви ввели текст або символи.")  # Виводимо користувачу про помилку.
+# except Exception as Error:  # Якщо з'являється якась помилка.
+#     print(f"Помилка! зв'яжіться з розробником програми.")  # Виводимо користувачу про помилку.
+
+# task
+# n = 10
+# ist = [random.randint(1, 100) for _ in range(n)]
+# print(f"Лист: {ist}")
+# min_number = min(ist)
+# max_number = max(ist)
+# min_value_index = ist.index(min_number)
+# max_value_index = ist.index(max_number)
+# ist[min_value_index] = max_number
+# ist[max_value_index] = min_number
+# print(f"Лист: {ist}")
+
+# task other solution
+# ist[ist.index(min(ist))], ist[ist.index(max(ist))] = max(ist), min(ist)
+# print(f"Лист: {ist}")
+
+# task 2
+# n = 10
+# numbers = [random.randint(1, 100) for _ in range(n)]
+# print(numbers)
+# # for x in numbers:
+# #     if x % 2 == 0:
+# #         print(x)
+# even_numbers = [num for num in numbers if num % 2 == 0]
+# print(even_numbers)
+
+
+# task 3
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+# lenth = (len(numbers)) // 2
+# numbers_1 = numbers[:lenth]
+# numbers_2 = numbers[lenth:]
+# print(numbers_1, numbers_2)
+# sorted_numbers = sorted(numbers, reverse=True)
+# second_numbers = sorted_numbers[1]
+# print(second_numbers)
