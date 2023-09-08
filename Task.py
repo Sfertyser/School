@@ -53,8 +53,9 @@ try:
 
                 # Приклад використання:
                 words = ["Blueberry", "Banana", "Orange", "Watermelon", "Strawberry", "Apple", "Grape", "Pineapple"]
+                print(f"Список до сортування: {words}")
                 sorted_words = sort_words(words)
-                print(sorted_words)
+                print(f"Список після сортування: {sorted_words}")
     else:
         print("Помилка, ви ввели число не в діапазоні завдань.")
 except ValueError as Error:
