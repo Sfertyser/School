@@ -49,9 +49,6 @@ try:
             case 5:  # 5. Функція для сортування списку слів за довжиною
                 def sort_words(word_list):
                     return sorted(word_list, key=len)  # key=len означає сортування за довжиною кожного слова.
-
-
-                # Приклад використання:
                 words = ["Blueberry", "Banana", "Orange", "Watermelon", "Strawberry", "Apple", "Grape", "Pineapple"]
                 print(f"Список до сортування: {words}")
                 sorted_words = sort_words(words)
