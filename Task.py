@@ -21,28 +21,11 @@
 
 # Task 3
 # Створіть словник, де ключами є кортежі, і напишіть функцію для доступу до значень з використанням кортежів як ключі.
-# tuple_dict = {
-#     ('a', 'b'): 1,
-#     ('x', 'y'): 2
-# }
-# key = ('a', 'b')
-# value = tuple_dict[key]
-# print(value)
-
 tuple_dict = {
     ('a', 'b'): 1,
     ('x', 'y'): 2
 }
-key1 = ('a', 'b')
-key2 = ('x', 'y')
-value1 = tuple_dict.get(key1)
-value2 = tuple_dict.get(key2)
-if value1 is not None:
-    print(f"Значення для ключа {key1}: {value1}")
-else:
-    print(f"Значення для ключа {key1} не знайдено")
-
-if value2 is not None:
-    print(f"Значення для ключа {key2}: {value2}")
-else:
-    print(f"Значення для ключа {key2} не знайдено")
+key1, key2 = ('a', 'b'), ('x', 'y')
+value1, value2 = tuple_dict.get(key1), tuple_dict.get(key2)
+print(f"Значення для ключа {key1}: {value1}")
+print(f"Значення для ключа {key2}: {value2}")
