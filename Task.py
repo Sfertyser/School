@@ -1,115 +1,31 @@
-# Wrong program
-# def calculate_expression(expression):
-#     stack = []
-#     operators = {"+", "-", "*", "/"}
-#     current_number = ""
-#
-#     def perform_operation(operator, operand1, operand2):
-#         if operator == "+":
-#             return operand1 + operand2
-#         elif operator == "-":
-#             return operand1 - operand2
-#         elif operator == "*":
-#             return operand1 * operand2
-#         elif operator == "/":
-#             if operand2 == 0:
-#                 raise ValueError("Дiлення на 0!")
-#             return operand1 / operand2
-#
-#     for char in expression:
-#         if char.isdigit() or char == "-":
-#             current_number += char
-#         elif char in operators or char.isspace():
-#             if current_number:
-#                 stack.append(int(current_number))
-#                 current_number = ""
-#             if char in operators:
-#                 stack.append(char)
-#
-#     if current_number:
-#         stack.append(int(current_number))
-#
-#     while len(stack) > 1:
-#         operand2 = stack.pop()
-#         operator = stack.pop()
-#         operand1 = stack.pop()
-#         result = perform_operation(operand1, operator, operand2)
-#         stack.append(result)
-#
-#     return stack[0] if stack else "Некорректний вираз!"
-#
-#
-# # Приклади використання функції
-# expression1 = "3 + 5 * 2"
-# result1 = calculate_expression(expression1)
-# print("Result 1:", result1)
-#
-# expression2 = "8 / 0"
-# result2 = calculate_expression(expression2)
-# print("Result 2:", result2)
+# Задача 1
+# text = input("Введіть рядок з 15 символами: ")
+# if not text:
+#     print("Помилка! рядок порожній.")
+# else:
+#     if len(text) < 15:
+#         text *= (15//len(text))+1
+# text_list = list(text)
+# print(text_list)
+# print(text_list[-5:])
+# print(text_list[::-1])
+# print(text_list[::2])
+# print(text_list[:5]+text_list[-5:])
 
+# Задача 2
+# user_input = input("Введiть строку з 15 символiв: ")
+# if not user_input:
+#     print("Строка порожня!")
+# else:
+#     user_input = user_input.just(15, user_input * 15)[:15]
+# user_list = list(user_input)
+# print(user_list)
 
-# Right program
-def calculate_expression(expression):
-    stack = []
-    operators = {"+", "-", "*", "/"}
-    current_number = ""
-
-    def perform_operation(operator, operand1, operand2):
-        if operator == "+":
-            return operand1 + operand2
-        elif operator == "-":
-            return operand1 - operand2
-        elif operator == "*":
-            return operand1 * operand2
-        elif operator == "/":
-            if operand2 == 0:
-                print("Дiлення на 0!")  # Проблема була в raise ZeroDivision
-                exit()
-            return operand1 / operand2
-
-    def precedence(operator):
-        if operator in ("+", "-"):
-            return 1
-        elif operator in ("*", "/"):
-            return 2
-        return 0
-
-    for char in expression:
-        if (char.isdigit() or char == "." or
-        (char == "-" and (not current_number or (stack and stack[-1] in operators)))):
-            current_number += char
-        elif char in operators or char.isspace():
-            if current_number:
-                stack.append(int(current_number))
-                current_number = ""
-            if char in operators:
-                while (stack and stack[-1] in operators and
-                       precedence(stack[-1]) >= precedence(char)):
-                    operand2 = stack.pop()
-                    operator = stack.pop()
-                    operand1 = stack.pop()
-                    result = perform_operation(operator, operand1, operand2)
-                    stack.append(result)
-                stack.append(char)
-
-    if current_number:
-        stack.append(int(current_number))
-
-    while len(stack) > 1:
-        operand2 = stack.pop()
-        operator = stack.pop()
-        operand1 = stack.pop()
-        result = perform_operation(operator, operand1, operand2)
-        stack.append(result)
-
-    return stack[0] if stack else "Некорректний вираз!"
-
-
-expression1 = "3 + 5 * 2"
-result1 = calculate_expression(expression1)
-print(f"{expression1} буде: {result1}")
-
-expression2 = "8 / 0"
-result2 = calculate_expression(expression2)
-print(f"{expression2} буде: {result2}")
+# Задача 2 перероблена
+user_input = input("Введiть строку з 15 символiв: ")
+if not user_input:
+    print("Строка порожня!")
+else:
+    user_input = user_input.ljust(15)[:15]
+user_list = list(user_input)
+print(user_list)
