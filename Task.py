@@ -1,3 +1,4 @@
+import random
 # Задача 1
 # text = input("Введіть рядок з 15 символами: ")
 # if not text:
@@ -97,9 +98,14 @@
 
 """Задано n цiлих чисел. Вивести рiзницю мiж найбiЛьшим i найменшим числом.
 Масив заповнити 20 випадковими числами вiд -10 до 10."""
-import random
-text = []
-for i in range(20):
-    text.append(random.randint(-10, 10))
-print(text)
-print(max(text) - min(text))
+# Оригінальна версія
+# text = []
+# for i in range(20):
+#     text.append(random.randint(-10, 10))
+# print(text)
+# print(max(text) - min(text))
+
+# Дуже спрощена версія
+numbers = [random.randint(-10, 10) for _ in range(20)]
+print(f"Масив випадкових чисел: {numbers}")
+print(f"Різниця між найбільшим і найменшим числом: {max(numbers) - min(numbers)}")
