@@ -179,7 +179,7 @@ text = 'Hello world'
 #     print("По гороскопу ви Риби.")
 
 
-print(random.randint(1, 10))
+# print(random.randint(1, 10))
 # name = "Oleksandr"
 # print('Hello ' + name)
 # print('#####', '#####' + '#####' + '#####', "#####", sep='\n')

@@ -106,6 +106,47 @@ import random
 # print(max(text) - min(text))
 
 # Дуже спрощена версія
-numbers = [random.randint(-10, 10) for _ in range(20)]
-print(f"Масив випадкових чисел: {numbers}")
-print(f"Різниця між найбільшим і найменшим числом: {max(numbers) - min(numbers)}")
+# numbers = [random.randint(-10, 10) for _ in range(20)]
+# print(f"Масив випадкових чисел: {numbers}")
+# print(f"Різниця між найбільшим і найменшим числом: {max(numbers) - min(numbers)}")
+
+# Версія з розширеним функціоналом
+"""Задано n цiлих чисел. Вивести рiзницю мiж найбiльшим i найменшим числом.
+Масив заповнити 20 випадковими числами вiд -10 до 10."""
+try:
+    mathematical_actions = ["+", "-", "*", "/"]
+    number_of_numbers = int(input("Введіть кількість чисел в масиві: "))
+    while number_of_numbers < 2:
+        number_of_numbers = int(input("Помилка! Кількість чисел в масиві повинна бути не менше 2: "))
+    min_randint = int(input("Введіть мінімальне значення цілого випадкового числа: "))
+    max_randint = int(input("Введіть максимальне значення цілого випадкового числа: "))
+    while min_randint > max_randint:
+        max_randint = int(input("Помилка! Ваше максимальне значення менше за мінімальне. Введіть нове значення: "))
+    numbers = [random.randint(min_randint, max_randint) for _ in range(number_of_numbers)]
+    print(f"Згенерований масив: {numbers}")
+    while True:
+        print("Варіанти: + - * / Або 'quit' щоб вийти з програми.")
+        choice = input("Введіть команду для найменшого та найбільшого числа в масиві: ")
+        if len(choice) == 1 and choice in mathematical_actions or choice == "quit":
+            match choice:
+                case "+":
+                    print(f"{min(numbers)} + {max(numbers)} =", min(numbers) + max(numbers))
+                case "-":
+                    print(f"{min(numbers)} - {max(numbers)} =", min(numbers) - max(numbers))
+                case "*":
+                    print(f"{min(numbers)} * {max(numbers)} =", min(numbers) * max(numbers))
+                case "/":
+                    if max(numbers) == 0 or min(numbers) == 0:
+                        print("Помилка! Ділити на нуль не можна.")
+                    else:
+                        division_value = float(min(numbers)) / float(max(numbers))
+                        print(f"{min(numbers)} / {max(numbers)} = {division_value}")
+                case "quit":
+                    print("Програму завершено.")
+                    break
+        else:
+            print("Помилка! Введіть команду для найменшого та найбільшого числа в масиві: ")
+except ValueError:
+    print("Помилка! Ви ввели некоректний тип даних.")
+except Exception:
+    print("Помилка! Зв'яжіться з розробником програми.")
