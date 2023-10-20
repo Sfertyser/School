@@ -114,7 +114,7 @@ import random
 """Задано n цiлих чисел. Вивести рiзницю мiж найбiльшим i найменшим числом.
 Масив заповнити 20 випадковими числами вiд -10 до 10."""
 try:
-    mathematical_actions = ["+", "-", "*", "/"]
+    actions = ["+", "-", "*", "/", "quit"]
     number_of_numbers = int(input("Введіть кількість чисел в масиві: "))
     while number_of_numbers < 2:
         number_of_numbers = int(input("Помилка! Кількість чисел в масиві повинна бути не менше 2: "))
@@ -125,9 +125,10 @@ try:
     numbers = [random.randint(min_randint, max_randint) for _ in range(number_of_numbers)]
     print(f"Згенерований масив: {numbers}")
     while True:
+        print("")
         print("Варіанти: + - * / Або 'quit' щоб вийти з програми.")
         choice = input("Введіть команду для найменшого та найбільшого числа в масиві: ")
-        if len(choice) == 1 and choice in mathematical_actions or choice == "quit":
+        if choice in actions:
             match choice:
                 case "+":
                     print(f"{min(numbers)} + {max(numbers)} =", min(numbers) + max(numbers))
@@ -136,17 +137,17 @@ try:
                 case "*":
                     print(f"{min(numbers)} * {max(numbers)} =", min(numbers) * max(numbers))
                 case "/":
-                    if max(numbers) == 0 or min(numbers) == 0:
-                        print("Помилка! Ділити на нуль не можна.")
-                    else:
                         division_value = float(min(numbers)) / float(max(numbers))
-                        print(f"{min(numbers)} / {max(numbers)} = {division_value}")
+                        rounded_division_value = round(division_value, 2)
+                        print(f"{min(numbers)} / {max(numbers)} = {rounded_division_value}")
                 case "quit":
                     print("Програму завершено.")
                     break
         else:
-            print("Помилка! Введіть команду для найменшого та найбільшого числа в масиві: ")
+            print("Помилка! Ви ввели неправильну команду.")
 except ValueError:
     print("Помилка! Ви ввели некоректний тип даних.")
+except ZeroDivisionError:
+    print("Помилка! Ділити на нуль не можна.")
 except Exception:
     print("Помилка! Зв'яжіться з розробником програми.")
