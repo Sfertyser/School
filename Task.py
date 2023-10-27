@@ -75,3 +75,35 @@
 # make_sound(my_cat)
 # make_sound(my_dog)
 
+# task 1
+# class Student:
+#     def __init__(self, name, age, grade):
+#         self.__name = name
+#         self.__age = age
+#         self.__grade = grade
+#
+#     def name1(self):
+#         return self.__name
+#
+#     def age1(self):
+#         return self.__age
+#
+#     def grade1(self):
+#         return self.__grade
+#
+#     def set_grade(self, grade):
+#         if 0 <= grade <= 100:
+#             self.__grade = grade
+#         else:
+#             print("Некоректнно заданна оцінка.")
+#
+#
+# student1 = Student("Олександр", 25, 50)
+# print(student1.name1())
+# print(student1.age1())
+# print(student1.grade1())
+#
+# student1.set_grade(100)
+# print(student1.grade1())
+
+# Task 2
