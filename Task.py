@@ -107,3 +107,54 @@
 # print(student1.grade1())
 
 # Task 2
+# class Book:
+#     def __init__(self, name, creator):
+#         self.__name = name
+#         self.__creator = creator
+#
+#     def get_name(self):
+#         return self.__name
+#
+#     def get_creator(self):
+#         return self.__creator
+#
+#
+# book1 = Book("Пригоди", "Іван Франко")
+# print(book1.get_name())
+# print(book1.get_creator())
+
+# Task 3
+# class Car:
+#     def __init__(self, mark, model):
+#         self.__mark = mark
+#         self.__model = model
+#         self.__speed = 0
+#
+#     def get_mark(self):
+#         return self.__mark
+#
+#     def get_model(self):
+#         return self.__model
+#
+#     def get_speed(self):
+#         return self.__speed
+#
+#     def accelerate(self, amount):
+#         if amount > 0:
+#             self.__speed += amount
+#
+#     def brake(self, amount):
+#         if amount > 0:
+#             self.__speed -= amount
+#             if self.__speed < 0:
+#                 self.__speed = 0
+#
+#
+# new_car = Car("Ford", "Transit")
+# print(new_car.get_mark())
+# print(new_car.get_model())
+# print(new_car.get_speed())
+# new_car.accelerate(60)
+# print(new_car.get_speed())
+# new_car.brake(20)
+# print(new_car.get_speed())
