@@ -1,92 +1,52 @@
-# Поліморфізм
-# class Animal:
-#     def speak(self):
-#         return ""
+"""1. Наведено список чисел. Визначте, скільки у ньому зустрічається різних чисел.
+приклад: якщо в списку число 8 зустрічається 3 рази то це означає що в списку зустрічається 8мка."""
+
+# import random
 #
-#
-# class Cat(Animal):
-#     def speak(self):
-#         return "Мяу"
-#
-#
-# class Dog(Animal):
-#     def speak(self):
-#         return "Гав"
-#
-#
-# cat = Cat()
-# dog = Dog()
-#
-# print(cat.speak())
-# print(dog.speak())
+# numbers = [random.randint(0, 20) for _ in range(10)]
+# different_numbers = set(numbers)
+# similar_numbers = len(different_numbers)
+# print(similar_numbers)
 
+# set1 = {1, 2, 3, 4, 5}
+# set2 = {1, 2, 3, 4, 10, 11, 12, 13, 14, 15}
+# # Додавання елементу
+# set1.add(6)
+# print(set1)
+# # Видалення елементу
+# set1.remove(3)
+# print(set1)
+# set1.remove(6)
+# print(set1)
+# # Об'єднання множин
+# union_set = set1.union(set2)
+# print(union_set)
+# # Перевірка елемента у множині
+# member = 4 in set1
+# print(member)
+# # Перетин множин
+# intersection_set = set1.intersection(set2)
+# print(intersection_set)
+# # Різниця множин
+# difference_set = set1.difference(set2)
+# print(difference_set)
 
-# def animal_sound(animal):
-#     return animal.speak()
+"""2. Дано два списки чисел. Порахуйте, скільки різних чисел міститься як у першому списку, і у другому оночасно.
+-PS: Різних чисел - мається на увазі що усі однакові елементи повинні бути представленні в одному екземплярі
+(приклад: 3 однаковиі числа мають бути пораховані як 1 елемент)"""
+# text1 = [1, 2, 3, 4, 5, 6, 7, 8]
+# text2 = [5, 6, 7, 8, 9, 10, 11, 12]
+# different_num1 = set(text1)
+# different_num2 = set(text2)
+# difference_set = different_num1.intersection(different_num2)
+# difference = len(difference_set)
+# print(difference)
 
-
-# cat = Cat()
-# dog = Dog()
-# print(animal_sound(cat))
-# print(animal_sound(dog))
-
-
-# class My_number:
-#     def __init__(self, value):
-#         self.value = value
-#
-#     def __add__(self, other):
-#         if isinstance(other, My_number):
-#             return My_number(self.value + other.value)
-#         else:
-#             return My_number(self.value + other)
-#
-#     def __str__(self):
-#         return str(self.value)
-#
-#
-# num1 = My_number(25)
-# num2 = My_number(35)
-# result = num1 + num2
-# print(result)
-
-"""Створіть функцію get_area, яка приймає об'єкт фігури (як екземпляр класу Shape)
-та повертає площу цієї фігури, використовуючи поліморфізм."""
-
-
-class Shape:
-    def area(self):
-        pass
-
-
-class Rectangle(Shape):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-    def area(self):
-        return self.width * self.height
-
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        import math
-        return math.pi * self.radius ** 2
-
-
-def get_area(Shape):
-    return Shape.area()
-#
-#
-# rectangle = Rectangle(10, 8)
-# circle = Circle(30)
-# print(get_area(rectangle))
-# print(get_area(circle))
-
-
-shapes = [Rectangle(4, 5), Circle(30)]
-for shape in shapes:
-    print(shape.area())
+""" 3. Є список(створити тестовий список для перевірки) із довільними даними (можуть бути словніки і списки).
+Поставлено завдання перетворити його на множину. Якщо якісь елементи не можна хешувати, пропускаємо їх."""
+text1 = ["abc", 5, 89, {"author": "book"}]
+text2 = set()
+for i in text1:
+    if isinstance(i, (str, int)):
+        text2.add(i)
+print(text2)
