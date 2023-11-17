@@ -1,37 +1,80 @@
-try:
-    choice = int(input("Введіть номер завдання(1-5): "))
-    if 0 < choice < 6:
-        match choice:
-            case 1:  # Операції над множинами:
-                set1 = {1, 2, 3, 4, 5}
-                set2 = {4, 5, 6, 7, 8}
-                print("Об'єднання множин:", set1.union(set2))
-                print("Перетин чисел у множинах:", set1.intersection(set2))
-                print("Різниця чисел у першій множині від другої:", set1.difference(set2))
-                print("Різниця чисел у другої множини від першої:", set2.difference(set1))
-            case 2:  # Перевірка включеності:
-                set3 = {1, 2, 3, 4}
-                set4 = {1, 2, 3, 4, 5, 6, 7, 8}
-                if set3.issubset(set4):
-                    print("Так, одна множина є підмножиною іншої.")
-                else:
-                    print("Ні, одна множина не є підмножиною іншої.")
-            case 3:  # Видалення дублікатів:
-                list_wd = [1, 1, 2, 3, 4, 4, 5, 5]
-                print(f"Список з дублікатами: {list_wd}")
-                print("Множина:", set(list_wd))
-            case 4:  # Математичні операції:
-                math_students = {"Abby", "Bob", "Max", "Michael"}
-                physics_students = {"Bob", "James", "Michael", "Grace"}
-                print("Студенти, які вивчають лише математику:", math_students.difference(physics_students))
-                print("Студенти, які вивчають лише фізику:", physics_students.difference(math_students))
-                print("Студенти, які вивчають обидва предмети:", math_students.intersection(physics_students))
-            case 5:  # Конвертація типів:
-                mixed_set = {1, 4, 7, "hello"}
-                print("Множина: ", mixed_set)
-                converted_list = list(mixed_set)
-                print("Конвертована множина у список:", converted_list)
-    else:
-        print("Помилка, ви ввели число не в діапазоні завдань.")
-except Exception as Error:
-    print("Помилка, зв'яжіться з розробником програми.")
+import random
+"""
+Написати функцію яка приймає на вхід параметри: список  чисел будь-якої довжини та число.
+Функція повинна перевірити чи є у списку/послідовності 2 числа сума яких
+еквівалентна числу переданому 2-гим параметром. Функція має повернути
+булеве значення як результат пошуку фукції.
+Для перевірки викликати двічі функцію з різними тестовими прикладами"""
+
+
+# def user_input():
+#     user_list = list(input("Введіть список чисел: "))
+#     user_input = int(input("Введіть число: "))
+#     for i in user_list:
+#         if i
+
+
+# def perevirka_sumy(nums, ts_ch):  # ts_ch - цiльове число
+#     potentsiina_suma = set()
+#
+#     for num in nums:
+#         riznytsya = ts_ch - num
+#         if riznytsya in potentsiina_suma:
+#             return True
+#         potentsiina_suma.add(num)
+#
+#     return False
+#
+#
+# dovguna_spysku1 = random.randint(5, 10)
+# spysok1 = random.sample(range(5, 15), dovguna_spysku1)
+# zadane_chyslo1 = random.randint(5, 15)
+# print(f"Згенерований випадковий список: {spysok1} має випадкову суму"
+#       f" {zadane_chyslo1}. Булевий результат: "
+#       f"{perevirka_sumy(spysok1, zadane_chyslo1)}.")
+#
+# dovguna_spysku2 = random.randint(3, 10)
+# spysok2 = random.sample(range(5, 15), dovguna_spysku2)
+# zadane_chyslo2 = random.randint(10, 20)
+# print(f"Згенерований випадковий список: {spysok2} має випадкову суму"
+#       f" {zadane_chyslo2}. Булевий результат: "
+#       f"{perevirka_sumy(spysok2, zadane_chyslo2)}.")
+
+"""
+Реалізувати 2 функціЇ
+Перша функція приймає 2 параметри і генерує 2 вимірний список.
+Заповнений випадковими цілими значенням в диапазлні 0 - 200 .
+Параметри повинні задати кількість списків у основному списку а також довжину елементів списку.
+Усі елементи головного списку є списками і мають однакову довжину.
+Тако ж функція може бути запущена без параметрів з одним параметром та 2ма параметрами.
+Функція повинна повернути згенерований 2 мірний список.
+2 га функція очікує один обовязковий парметр і це має бути 2 вимірний список симетричний.
+Вона отримує спискок і друкує симетричну табличку (у якої колонки не роз'їжаються)
+значень з отриманого формального парметра. 
+За дпомогою 1 та 2 функції вивести 3 таблички :
+коли перша функція не отримує параметри 
+коли перша фнкція отримує 1 парметр
+коли перша функція отримує 2 параметри
+"""
+
+
+def list2d(row=None, column=None):
+    if row is None and column is None:
+        row = int(input("Введіть довжину строки: "))
+        column = int(input("Введіть висоту строки: "))
+    elif column is None:
+        column = int(input("Введіть висоту строки: "))
+    matrix = [[random.randint(0, 200) for _ in range(column)] for _ in range(row)]
+    return matrix
+
+
+def symetrical_table():
+    max_len = max(len(str(element)) for st in list2d for element in st)
+    for st in list2d:
+        row_str = " ".join(str(element).rjust(max_len) for element in st)
+        print(row_str)
+
+
+print("Таблиця без параметрів")
+symetrical_table(list2d())
+print()
