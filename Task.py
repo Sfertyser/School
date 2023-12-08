@@ -1,44 +1,74 @@
-"""Оптимізація словника для зберігання даних:
-Розглянемо ситуацію, коли у вас є словник з великим обсягом даних, які надають інформацію про студентів в університеті.
-Кожен студент має унікальний ідентифікатор,
-а атрибути включають оцінки різних предметів, дату народження, список курсів і т.д.
-Зіткніться із завданням оптимізації цього словника, щоб забезпечити ефективний доступ та модифікацію даних."""
+from collections import defaultdict
+import random
+import math
+# Дано звіт продаж за тиждень працівників компанії у такому форматі
+# Може бути таке що якись працівник робив декілька продаж на тиждень як на приклад "Alisa"
+# Задача:
+# створити множину робітників що зазначено у звіті продаж - вивести на єкран створити словник ключем якого буде ім'я
+# працівника, а значенням сума виторгу ним за тиждень що зазначена  ключем "price" у звіті. Словник  надрукувати.
+# data = [
+#  {"name": "Alisa", "country": "UA", "item": "socks", "price": 15},
+#  {"name": "Alisa", "country": "UA", "item": "socks", "price": 25},
+#  {"name": "Ben", "country": "US", "item": "pencil", "price": 95},
+#  {"name": "Alisa", "country": "UA", "item": "pencil", "price": 45},
+#  {"name": "Oleg", "country": "GB", "item": "socks", "price": 100},
+#  {"name": "Ben", "country": "US", "item": "pencil", "price": 10}
+# ]
+# workers = set(entry["name"] for entry in data)
+# sales_sum = {}
+# for entry in data:
+#  name = entry["name"]
+#  price = entry["price"]
+#  if name in sales_sum:
+#   sales_sum[name] += price
+#  else:
+#   sales_sum[name] = price
+#
+# print(f"Множина робітників: {workers}")
+# print("Сума виторгу за тиждень за кожного працівника: ")
+# for worker, sales in sales_sum.items():
+#  print(f"{worker}: {sales}")
 
-# from collections import namedtuple, default-dict
-# Student = namedtuple("Student", ["Name", "DOB", "Grades"])
-# grades = defaultsect(int)
-# grades["Math"] = 0
-# grades["Ecology"] = 0
-# student_data = {
-#     "ID1": Student("Петро", "01-01-2000", {"Language": 75, "Chemistry": 86, "Math": 72}),
-#     "ID2": Student("Оксана", "25-08-2003", {"Biology": 93, "Ecology": 82, "History": 79}),
-#     "ID3": Student("Дмитро", "12-11-1998", {"Information Technology": 96, "Physics": 88, "Geography": 91})
-# }
-# for studentID, student_info in student_data.items():
-#     print(f"studentID: {studentID}")
-#     print(f"Name:{student_info.Name}")
-#     print(f"DOB:{student_info.DOB}")
-#     print("Grades:")
-#     for subject, grade in student_info.Grades.items():
-#         print(f"    {subject}: {grade}")
-#
-# student_test = Student("Оксана", "25-08-2003", {"Biology": 93, "Ecology": 82, "History": 79})
-# print(student_test[0])
-# print(student_test.Name)
-# print(grades["Law"])
+# v2
+# data = [
+#  {"name": "Alisa", "country": "UA", "item": "socks", "price": 15},
+#  {"name": "Alisa", "country": "UA", "item": "socks", "price": 25},
+#  {"name": "Ben", "country": "US", "item": "pencil", "price": 95},
+#  {"name": "Alisa", "country": "UA", "item": "pencil", "price": 45},
+#  {"name": "Oleg", "country": "GB", "item": "socks", "price": 100},
+#  {"name": "Ben", "country": "US", "item": "pencil", "price": 10}
+# ]
+# workers = set(entry["name"] for entry in data)
+# sales_sum = default dict(int)
+# for entry in data:
+#  sales_sum[entry["name"]] += entry["price"]
+# print(f"Множина робітників: {workers}")
+# print("Сума виторгу за тиждень за кожного працівника: ")
+# for worker, sales in sales_sum.items():
+#  print(f"{worker}: {sales}")
 
-"""Спростіть представлення точок у двовимірному просторі та обчисліть відстань між двома точками."""
-# from collections import namedtuple
-# import math
-#
-# Point = namedtuple("Point", ["x", "y"])
-# point1 = Point(3, 4)
-# point2 = Point(-3, 4)
-#
-#
-# def calculate(p1, p2):
-#     return math.sqrt((p2.x-p1.x)**2+(p2.y-p1.y)**2)
-#
-#
-# distance = calculate(point1, point2)
-# print(distance)
+# Задача: Розподіл точок на площині
+# Створіть програму, яка генерує список точок на площині. Кожна точка представлена словником з ключами "x" та "y",
+# що вказують координати точки. Кількість точок та їхні координати визначаються випадковим чином.
+# Виведіть:
+# 1. Кількість унікальних значень x та y у згенерованому списку точок.
+# 2. Всі точки, які знаходяться в першій чверті (x та y обидва додатні).
+# 3. Відстань між першою та останньою точкою у списку.
+# Приклад виводу:
+# Кількість унікальних значень x: 8
+# Кількість унікальних значень y: 7
+# Точки в першій чверті:
+# {"x": 3, "y": 5}
+# {"x": 2, "y": 4}
+# {"x": 4, "y": 3}
+# Відстань між першою та останньою точкою: 5.0
+# У цій задачі вам слід розглянути генерацію списку точок та виконання різних операцій над ним.
+# dots = [{"x": random.randint(-10, 10), "y": random.randint(-10, 10)} for _ in range(10)]
+# unique_x_value = len(set(dot["x"] for dot in dots))
+# unique_y_value = len(set(dot["y"] for dot in dots))
+# points_in_first_quadrant = [dot for dot in dots if dot["x"] > 0 and dot["y"] > 0]
+# print("Точки в першій чверті: ")
+# for dot in points_in_first_quadrant:
+#     print(dot)
+# distance = math.sqrt((dots[0]["x"] - dots[-1]["x"])**2 + (dots[0]["y"] - dots[-1]["y"])**2)
+# print(f"\n Відстань між першою та останію точкою: {distance:.4f}")
