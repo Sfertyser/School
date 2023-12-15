@@ -24,8 +24,8 @@ try:
                                                         "Нічия"])
                     if match["результат"] == "Нічия":
                         print(f"Нічия між {match["команда1"]}"
-                              f" та {match["команда2"]}"
-                              f". Матч було переграно.")
+                              f" та {match["команда2"]} у Етапі "
+                              f"{round_num}")  # Не працює
                         match["результат"] = random.choice([teams[i],
                                                             teams[i + 1]])
                 matches.append(match)  # Додає для зміни щоб вивести можна було.
@@ -37,10 +37,10 @@ try:
         return schedule
 
 
+    round_num = 1
     num_teams = random.choice([4, 8, 16])
     print(f"Розклад спортивного турніру з {num_teams} команд:\n")
     tournament_schedule = generate_tournament_schedule(num_teams)
-    round_num = 1
     for matches in tournament_schedule:
         print(f"\nЕтап {round_num}:")
         for match in matches:
