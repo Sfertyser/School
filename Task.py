@@ -32,7 +32,7 @@ try:
             schedule.append(matches)  # Додає список matches до schedule.
             winners = [match["результат"] for match in matches
                        if match["результат"]
-                       != "Нічия"]  # Зберігає переможців.
+                       != "Нічия"]  # Зберігає переможців у зміну.
             teams = winners
         return schedule
 
