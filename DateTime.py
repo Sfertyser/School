@@ -42,8 +42,8 @@ try:
             print(f"Дата завершення проекту: {end_date.strftime('%Y-%m-%d')}")
 
         case 5:  # Час до наступного святкування
-            birthday_str = input(
-                "Введіть свою дату народження у форматі РРРР-ММ-ДД: ")
+            birthday_str = input("Введіть свою дату народження у форматі"
+                                 " (РРРР-ММ-ДД): ")
             birthday = datetime.strptime(birthday_str, "%Y-%m-%d")
             current_date = datetime.now()
             next_birthday = birthday.replace(year=current_date.year)
