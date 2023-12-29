@@ -2452,21 +2452,21 @@ timedelta має кілька атрибутів, які надають інфо
 """
 
 
-# def verification(input_date_str):
-#     try:
-#         user_date = (datetime.strptime
-#                      (input_date_str, "%Y-%m-%d %H:%M:%S"))
-#         current_date = datetime.now()
-#         next_date = current_date + timedelta(days=7)
-#         if current_date <= user_date <= next_date:
-#             print(f"Ваша дата та час: {user_date}, відповідають діапазону.")
-#         else:
-#             print(f"Ваша дата та час: {user_date}, не відповідають діапазону.")
-#     except Exception as e:
-#         print(f"Помилка!, {str(e)}")
-#
-#
-# user_date_time = input("Введіть вашу дату у форматі (YYYY-MM-DD "
-#                        "HH:MM:SS): ")
-# result = verification(user_date_time)
-# print(result)
+def verification(input_date_str):
+    try:
+        user_date = (datetime.strptime
+                     (input_date_str, "%Y-%m-%d %H:%M:%S"))
+        current_date = datetime.now()
+        next_date = current_date + timedelta(days=7)
+        if current_date <= user_date <= next_date:
+            print(f"Ваша дата та час: {user_date}, відповідають діапазону.")
+        else:
+            print(f"Ваша дата та час: {user_date}, не відповідають діапазону.")
+    except Exception as e:
+        print(f"Помилка!, {str(e)}")
+
+
+user_date_time = input("Введіть вашу дату у форматі (YYYY-MM-DD "
+                       "HH:MM:SS): ")
+result = verification(user_date_time)
+print(result)
