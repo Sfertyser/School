@@ -4,16 +4,22 @@
 #     while choice <= 0 or choice >= 6:
 #         choice = int(input("Помилка, введіть номер завдання(1-5): "))
 #     match choice:
+#
 #         case 1:
 #             pass
+#
 #         case 2:
 #             pass
+#
 #         case 3:
 #             pass
+#
 #         case 4:
 #             pass
+#
 #         case 5:
 #             pass
+#
 # except MemoryError as e:
 #     print(f"{str(e)}, у вас недостатньо оперативної пам'яті щоб запустити цю "
 #           "програму.")
