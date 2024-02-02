@@ -1,94 +1,115 @@
-"""Сума елементiв матрицi (построково)"""
+import random
+select = int(input("Введіть номер завдання: "))
+if 0 < select < 5:
+    match select:
+        case 1:
+            """Створіть матрицю чисел. Знайдіть максимальний елемент
+            в кожному рядку та виведіть результат."""
+            rows = int(input("Введіть кількість рядків: "))
+            cols = int(input("Введіть кількість стовпців: "))
+            min_value = int(input("Введіть мінімальне значення: "))
+            max_value = int(input("Введіть максимальне значення: "))
+            while min_value == max_value:
+                max_value = int(input("Введіть максимальне значення: "))
+            matrix = []
+            for _ in range(rows):
+                row = [random.randint(min_value, max_value)
+                       for _ in range(cols)]
+                matrix.append(row)
+            print("Згенерована матриця:")
+            for row in matrix:
+                print(row)
+            print("\nМаксимальні елементи в кожному рядку:")
+            for i, row in enumerate(matrix, 1):
+                max_in_row = max(row)
+                print(f"Рядок {i}: {max_in_row}")
 
-# matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-#
-# for row in matrix:
-#     row_sum = sum(row)
-#     print(f"Сума елементiв строки {row}: {row_sum}")
+        case 2:
+            """Створіть дві матриці однакового розміру та додайте їх,
+            створюючи нову матрицю із результатом."""
+            rows = int(input("Введіть кількість рядків: "))
+            cols = int(input("Введіть кількість стовпців: "))
+            min_value = int(input("Введіть мінімальне значення: "))
+            max_value = int(input("Введіть максимальне значення: "))
+            matrix1 = []
+            for _ in range(rows):
+                row = [random.randint(min_value, max_value)
+                       for _ in range(cols)]
+                matrix1.append(row)
+            print("Перша матриця:")
+            for row in matrix1:
+                print(row)
+            matrix2 = []
+            for _ in range(rows):
+                row = [random.randint(min_value, max_value)
+                       for _ in range(cols)]
+                matrix2.append(row)
+            print("\nДруга матриця:")
+            for row in matrix2:
+                print(row)
 
-"""Множення на число"""
-#
-# matrix = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
-# factor = 2
-#
-# result_matrix = [[element * factor for element in row] for row in matrix]
-#
-# print("Помножена матриця:", result_matrix)
+            result_matrix = []
+            for i in range(rows):
+                result_row = [matrix1[i][j] + matrix2[i][j]
+                              for j in range(cols)]
+                result_matrix.append(result_row)
+            print("\nРезультат додавання матриць:")
+            for row in result_matrix:
+                print(row)
 
-"""Пошук min елементу у кожному стовбцi"""
+        case 3:
+            """Створіть дві матриці із відповідними розмірами та перемножте їх,
+            створюючи нову матрицю із результатом"""
+            rows1 = int(input("Введіть кількість рядків для обох матриць: "))
+            cols1 = int(input("Введіть кількість стовпців для обох матриць: "))
+            rows2 = rows1
+            cols2 = cols1
 
-# matrix = [
-#     [11, -2, 34],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
-#
-# for j in range(len(matrix[0])):
-#     column = [matrix[i][j] for i in range(len(matrix))]
-#     min_element = min(column)
-#     print(f"Мiнiмальний елемент у стовпцi {j + 1}: {min_element}")
+            matrix1 = [[0] * cols1 for _ in range(rows1)]
+            matrix2 = [[0] * cols2 for _ in range(rows2)]
 
-"""Пошук середнього значення ел-тiв у матрицi"""
+            print("Введіть елементи першої матриці:")
+            for i in range(rows1):
+                for j in range(cols1):
+                    matrix1[i][j] = int(input(f"Елемент [{i + 1},{j + 1}]: "))
 
-# matrix = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
-#
-# flat_row = [element for row in matrix for element in row]
-# average = sum(flat_row) / len(flat_row)
-#
-# print(average)
+            print("Введіть елементи другої матриці:")
+            for i in range(rows2):
+                for j in range(cols2):
+                    matrix2[i][j] = int(input(f"Елемент [{i + 1},{j + 1}]: "))
 
-"""Пошук додатнiх елементiв у матрицi"""
+            result_matrix = [[0] * cols2 for _ in range(rows1)]
 
-# matrix = [
-#     [-1, 2, 3],
-#     [4, -5, 6],
-#     [-7, -8, 9]
-# ]
-#
-# for i in range(len(matrix)):
-#     for j in range(len(matrix[0])):
-#         if matrix[i][j] > 0:
-#             print(f"Додатнiй елемент {matrix[i][j]}, позицiя ({i + 1}, "
-#                   f"{j + 1})")
+            for i in range(rows1):
+                for j in range(cols2):
+                    for k in range(cols1):
+                        result_matrix[i][j] += matrix1[i][k] * matrix2[k][j]
 
-"""Транспонування матриці"""
-"""Створіть матрицю та транспонуйте її, помінявши місцями рядки і стовпці,
- створюючи нову матрицю."""
+            print("\nРезультат множення матриць:")
+            for row in result_matrix:
+                print(row)
 
-# V1
-# matrix1 = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
-# matrix2 = [
-#     [0, 0, 0],
-#     [0, 0, 0],
-#     [0, 0, 0]
-# ]
-# for i in range(3):
-#     for j in range(3):
-#         matrix2[i][j] = matrix1[j][i]
-#
-# for row in matrix2:
-#     print(row)
+        case 4:
+            """Створіть квадратну матрицю та визначте,
+            чи вона є симетричною(рівною своєму транспонованому варіанту)."""
+            n = int(input("Введіть розмір квадратної матриці: "))
+            matrix = [[random.randint(1, 10) for _ in range(n)]
+                      for _ in range(n)]
+            print("Квадратна матриця:")
+            for row in matrix:
+                print(row)
+            transposed_matrix = [[matrix[j][i] for j in range(n)]
+                                 for i in range(n)]
+            is_symmetric = True
+            for i in range(n):
+                for j in range(n):
+                    if matrix[i][j] != transposed_matrix[i][j]:
+                        is_symmetric = False
+                        break
+            if is_symmetric:
+                print("\nМатриця є симетричною.")
+            else:
+                print("\nМатриця не є симетричною.")
 
-# V2
-# matrix1 = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
-# matrix2 = [[matrix1[j][i] for j in range(len(matrix1))]
-#            for i in range(len(matrix1[0]))]
-#
-# for row in matrix2:
-#     print(row)
+else:
+    print("Помилка, ви ввели неправильний номер завдання")
