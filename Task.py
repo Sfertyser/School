@@ -1,7 +1,9 @@
 import random
-select = int(input("Введіть номер завдання: "))
-if 0 < select < 5:
-    match select:
+try:
+    choice = int(input("Введіть номер завдання(1-4): "))
+    while choice <= 0 or choice >= 5:
+        choice = int(input("Помилка, введіть номер завдання(1-4): "))
+    match choice:
         case 1:
             """Створіть матрицю чисел. Знайдіть максимальний елемент
             в кожному рядку та виведіть результат."""
@@ -9,17 +11,22 @@ if 0 < select < 5:
             cols = int(input("Введіть кількість стовпців: "))
             min_value = int(input("Введіть мінімальне значення: "))
             max_value = int(input("Введіть максимальне значення: "))
-            while min_value == max_value:
-                max_value = int(input("Введіть максимальне значення: "))
             matrix = []
+            while min_value == max_value:
+                max_value = int(input("Помилка, мінімальне число дорівнювало "
+                                      "максимальному. Введіть максимальне "
+                                      "значення: "))
+
             for _ in range(rows):
                 row = [random.randint(min_value, max_value)
                        for _ in range(cols)]
                 matrix.append(row)
             print("Згенерована матриця:")
+
             for row in matrix:
                 print(row)
             print("\nМаксимальні елементи в кожному рядку:")
+
             for i, row in enumerate(matrix, 1):
                 max_in_row = max(row)
                 print(f"Рядок {i}: {max_in_row}")
@@ -32,14 +39,18 @@ if 0 < select < 5:
             min_value = int(input("Введіть мінімальне значення: "))
             max_value = int(input("Введіть максимальне значення: "))
             matrix1 = []
+            matrix2 = []
+            result_matrix = []
+
             for _ in range(rows):
                 row = [random.randint(min_value, max_value)
                        for _ in range(cols)]
                 matrix1.append(row)
             print("Перша матриця:")
+
             for row in matrix1:
                 print(row)
-            matrix2 = []
+
             for _ in range(rows):
                 row = [random.randint(min_value, max_value)
                        for _ in range(cols)]
@@ -48,7 +59,6 @@ if 0 < select < 5:
             for row in matrix2:
                 print(row)
 
-            result_matrix = []
             for i in range(rows):
                 result_row = [matrix1[i][j] + matrix2[i][j]
                               for j in range(cols)]
@@ -60,32 +70,34 @@ if 0 < select < 5:
         case 3:
             """Створіть дві матриці із відповідними розмірами та перемножте їх,
             створюючи нову матрицю із результатом"""
-            rows1 = int(input("Введіть кількість рядків для обох матриць: "))
-            cols1 = int(input("Введіть кількість стовпців для обох матриць: "))
-            rows2 = rows1
-            cols2 = cols1
+            matrix1 = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ]
+            print(f"Перша матриця:")
+            for row in matrix1:
+                print(row)
+            matrix2 = [
+                [9, 8, 7],
+                [6, 5, 4],
+                [3, 2, 1]
+            ]
+            print(f"Друга матриця:")
+            for row in matrix2:
+                print(row)
+            result_matrix = [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ]
 
-            matrix1 = [[0] * cols1 for _ in range(rows1)]
-            matrix2 = [[0] * cols2 for _ in range(rows2)]
-
-            print("Введіть елементи першої матриці:")
-            for i in range(rows1):
-                for j in range(cols1):
-                    matrix1[i][j] = int(input(f"Елемент [{i + 1},{j + 1}]: "))
-
-            print("Введіть елементи другої матриці:")
-            for i in range(rows2):
-                for j in range(cols2):
-                    matrix2[i][j] = int(input(f"Елемент [{i + 1},{j + 1}]: "))
-
-            result_matrix = [[0] * cols2 for _ in range(rows1)]
-
-            for i in range(rows1):
-                for j in range(cols2):
-                    for k in range(cols1):
+            for i in range(len(matrix1)):
+                for j in range(len(matrix2[0])):
+                    for k in range(len(matrix2)):
                         result_matrix[i][j] += matrix1[i][k] * matrix2[k][j]
 
-            print("\nРезультат множення матриць:")
+            print("Результуюча матриця:")
             for row in result_matrix:
                 print(row)
 
@@ -111,5 +123,20 @@ if 0 < select < 5:
             else:
                 print("\nМатриця не є симетричною.")
 
-else:
-    print("Помилка, ви ввели неправильний номер завдання")
+
+except MemoryError as e:
+    print(f"{str(e)}, у вас недостатньо оперативної пам'яті щоб запустити цю "
+          "програму.")
+except FileNotFoundError as e:
+    print(f"{str(e)}, програма не може отримати доступ до файлу.")
+except OverflowError as e:
+    print(f"{str(e)}, межу допустимих значень було перевищено.")
+except PermissionError as e:
+    print(f"{str(e)}, у вас немає необхідних прав доступу для виконання "
+          f"певної операції")
+except TypeError as e:
+    print(f"{str(e)}, перевірте правильність типів даних.")
+except ValueError as e:
+    print(f"{str(e)}, перевірте правильність введених даних.")
+except Exception as e:
+    print(f"Виникла помилка: {str(e)}")
