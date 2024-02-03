@@ -128,9 +128,9 @@ from datetime import datetime, timedelta
 """Перевірка на високосний вік"""
 
 
-def strange_year(year):
-    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
-
-
-year_now = 2024
-print(strange_year(year_now))
+# def strange_year(year):
+#     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+#
+#
+# year_now = 2024
+# print(strange_year(year_now))
