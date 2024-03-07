@@ -107,9 +107,9 @@ from datetime import datetime, timedelta
 #                 for _ in range(5)]
 # print(f"5 випадкових слів з 5 букв: {random_words}")
 
-print("15. Створити список з 10 чисел,потім видалити всі парні числа з нього")
-
-numbers = [22, 34, 97, 89, 41, 56, 78, 91, 13, 65]
-print(f"Список до видалення парних чисел: {numbers}")
-numbers = [num for num in numbers if num % 2 != 0]
-print(f"Список після видалення парних чисел: {numbers}")
+# print("15. Створити список з 10 чисел,потім видалити всі парні числа з нього")
+#
+# numbers = [22, 34, 97, 89, 41, 56, 78, 91, 13, 65]
+# print(f"Список до видалення парних чисел: {numbers}")
+# numbers = [num for num in numbers if num % 2 != 0]
+# print(f"Список після видалення парних чисел: {numbers}")
