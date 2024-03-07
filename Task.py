@@ -70,7 +70,7 @@ from datetime import datetime, timedelta
 #         print("Число 17 є простим")
 #         break
 
-print("10. Знайти найменше спільне кратне чисел 12 і 18")
+# print("10. Знайти найменше спільне кратне чисел 12 і 18")
 # for i in range(1, 13):
 #     if 12 and 18 % i == 0:
 #         print(f"Найменшим спільним кратним числа 12 і 18 є {i}")
@@ -80,3 +80,36 @@ print("10. Знайти найменше спільне кратне чисел 
 # while i % 12 != 0 or i % 18 != 0:
 #     i += 1
 # print(i)
+
+# print("11. Вивести таблицю множення для числа 7")
+
+# for i in range(1, 11):
+#     print(f"7 * {i} = {7 * i}")
+# print("12. Вивести шахівницю з символів 'X' і 'O'")
+
+# size = 6
+# for i in range(size):
+#     for j in range(size):
+#         if (i + j) % 2 == 0:
+#             print('X', end=' ')
+#         else:
+#             print('O', end=' ')
+#     print()
+
+# print("13. Згенерувати 10 випадкових чисел від 1 до 100")
+#
+# random_numbers = [random.randint(1, 100) for _ in range(10)]
+# print(f"10 випадкових чисел від 1 до 100: {random_numbers}")
+
+# print("14. Згенерувати 5 випадкових слів з 5 букв")
+#
+# random_words = [''.join(random.choices(string.ascii_lowercase, k=5))
+#                 for _ in range(5)]
+# print(f"5 випадкових слів з 5 букв: {random_words}")
+
+print("15. Створити список з 10 чисел,потім видалити всі парні числа з нього")
+
+numbers = [22, 34, 97, 89, 41, 56, 78, 91, 13, 65]
+print(f"Список до видалення парних чисел: {numbers}")
+numbers = [num for num in numbers if num % 2 != 0]
+print(f"Список після видалення парних чисел: {numbers}")
