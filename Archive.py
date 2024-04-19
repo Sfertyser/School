@@ -3603,3 +3603,81 @@ import requests
 #
 # text = "Цей текст має деякі слова. Деякі з них повторюються частіше ніж інші."
 # print(f"Слово, що найчастіше зустрічається: {most_frequent_word(text)}")
+
+# 1
+# current_date = datetime.date.today()
+# birthday = datetime.date(2009, 7, 9)
+# date = current_date - birthday
+# date = date.days
+# print(f"Різниця днів: {date}")
+
+# 2
+# a1 = datetime.date(2030, 11, 24)
+# a2 = datetime.timedelta(days=100)
+# a3 = a1 + a2
+# print(f"{a3}")
+
+# 3
+# date1 = datetime.date(2024, 3, 7)
+# is_leap = date1.is_leapyear()
+# if date1.year % 4 == 0:
+#     print("Цей рік є високосним")
+# else:
+#     print("Цей рік не є високосним")
+
+
+# 1. Знайдіть дату, яка була 30 днів тому.
+# current_date = datetime.date.today()
+# other_date = datetime.timedelta(days=30)
+# new_date = current_date - other_date
+# print(current_date)
+# print(new_date)
+
+# 2Визначте чи є даний момент часу (час та дата) в межах заданого проміжку часу.
+# start_date = datetime.datetime(2020, 9, 4, 12, 46)
+# end_date = datetime.datetime(2024, 10, 17, 3, 8)
+# current_date = datetime.datetime.now()
+# time = current_date >= start_date and current_date <= end_date
+# if time:
+#     print("Так")
+# else:
+#     print("Ні")
+
+
+# def is_leap_year(year):
+#   try:
+#     date(year, 2, 29)
+#     return True
+#   except ValueError:
+#     return False
+#
+#
+# year = 2024
+#
+# if is_leap_year(year):
+#   print(f"Рік {year} - високосний.")
+# else:
+#   print(f"Рік {year} - не високосний.")
+
+
+# 3. Перетворіть рядок з датою ("2024-04-05") в об'єкт datetime.
+# date_string = "2024-04-05"
+# date_object = datetime.strptime(date_string, "%Y-%m-%d")
+# print(f"Об'єкт datetime: {date_object}")
+
+# 4. Виведіть список дат за заданий проміжок часу (наприклад, тиждень) з
+# кроком в 1 день.
+# start_date = datetime(2024, 4, 5)
+# end_date = datetime(2024, 4, 11)
+# current_date = start_date
+# while current_date <= end_date:
+#     print(current_date.strftime("%Y-%m-%d"))
+#     current_date += timedelta(days=1)
+
+# 5. Обчисліть, скільки годин, хвилин і секунд минуло з певного моменту часу.
+# start_time = datetime(2024, 4, 8, 11, 22, 16)
+# time_difference = datetime.now() - start_time
+# hours, remainder = divmod(time_difference.seconds, 3600)
+# minutes, seconds = divmod(remainder, 60)
+# print(f"Пройшло часу: {time_difference.days * 24 + hours}"
+#       f" годин, {minutes} хвилин, {seconds} секунд.")
